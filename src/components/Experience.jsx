@@ -11,12 +11,12 @@ const Experience = () => {
       ];
     
       return (
-        <div name="experience" className="bg-gradient-to-b from-black to-gray-800 w-full  text-white py-16">
+        <div name="experience" className="bg-gradient-to-b from-black to-gray-800  text-white py-40">
           <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
             <div className="pb-8">
               <p className="text-4xl font-bold inline border-b-4 border-gray-500">Experience</p>
             </div>
-            <div className="space-y-8">
+            <div className="space-y-8 mt-10">
               {experiences.map((experience, index) => (
                 <div key={index} className="bg-gray-700 p-6 rounded-md shadow-md">
                   <h3 className="text-2xl font-bold">{experience.jobTitle}</h3>
