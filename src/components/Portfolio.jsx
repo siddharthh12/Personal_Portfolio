@@ -2,6 +2,8 @@ import React from 'react';
 import reactElectronic from '../assets/es_ss.jpeg';
 import reactTicTacToe from '../assets/tictactoe.jpeg';
 import reactPortfolio from '../assets/portfolio.jpeg';
+import CodeCrafter from '../assets/CodeCrafter.jpeg';
+
 
 const Portfolio = () => {
   const portfolio = [
@@ -12,29 +14,21 @@ const Portfolio = () => {
     },
     {
       id: 2,
-      src: reactPortfolio,
-      link: 'https://github.com/siddharthh12/Personal_Portfolio',  
+      src: CodeCrafter,
+      link: 'https://github.com/siddharthh12/CodeCrafter/tree/master',
     },
     {
       id: 3,
+      src: reactPortfolio,
+      link: 'https://github.com/siddharthh12/Personal_Portfolio',  
+    },
+
+    {
+      id: 4,
       src: reactTicTacToe,
       link: 'https://github.com/siddharthh12/Tic_Tac_Toe',
     },
-    {
-      id: 4,
-      src: reactElectronic,
-      link: '#',
-    },
-    {
-      id: 5,
-      src: reactElectronic,
-      link: '#',
-    },
-    {
-      id: 6,
-      src: reactElectronic,
-      link: '#',
-    }
+    
   ];
 
   return (
