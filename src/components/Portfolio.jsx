@@ -3,32 +3,47 @@ import reactElectronic from '../assets/es_ss.jpeg';
 import reactTicTacToe from '../assets/tictactoe.jpeg';
 import reactPortfolio from '../assets/portfolio.jpeg';
 import CodeCrafter from '../assets/CodeCrafter.jpeg';
-
+import aitripplanner from '../assets/aitripplanner.jpeg';
+import notepad from '../assets/notepad.jpeg';
 
 const Portfolio = () => {
   const portfolio = [
     {
       id: 1,
-      src: reactElectronic,
-      link: 'https://github.com/siddharthh12/Electronic_Store_MERN',  
+      src: aitripplanner,
+      link: 'https://ai-trip-planner-bice.vercel.app/',  
+      title: 'AI Trip Planner'
     },
     {
       id: 2,
-      src: CodeCrafter,
-      link: 'https://github.com/siddharthh12/CodeCrafter/tree/master',
+      src: reactElectronic,
+      link: 'https://github.com/siddharthh12/Electronic_Store_MERN',  
+      title: 'Electronic Store'
     },
     {
       id: 3,
-      src: reactPortfolio,
-      link: 'https://github.com/siddharthh12/Personal_Portfolio',  
+      src: CodeCrafter,
+      link: 'https://github.com/siddharthh12/CodeCrafter/tree/master',
+      title: 'CodeCrafter'
     },
-
     {
       id: 4,
+      src: reactPortfolio,
+      link: 'https://github.com/siddharthh12/Personal_Portfolio',  
+      title: 'Personal Portfolio'
+    },
+    {
+      id: 5,
       src: reactTicTacToe,
       link: 'https://github.com/siddharthh12/Tic_Tac_Toe',
+      title: 'Tic Tac Toe'
     },
-    
+    {
+      id: 6,
+      src: notepad,
+      link: 'https://github.com/siddharthh12/notepad',
+      title: 'Notepad App'
+    },
   ];
 
   return (
@@ -40,17 +55,27 @@ const Portfolio = () => {
         </div>
 
         <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0'>
-          {portfolio.map(({ id, src, link }) => (
-            <div key={id} className='shadow-md shadow-gray-600 rounded-lg'>
-              <img src={src} alt="Project screenshot" className='rounded-md duration-200 hover:scale-105'/>
-              <div className='flex items-center justify-center'>
-                <a href={link} target="_blank" rel="noopener noreferrer" className='w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105 text-center bg-black-500 text-white rounded-md'>
-                  View Project
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
+  {portfolio.map(({ id, src, link, title }) => (
+    <div 
+      key={id} 
+      className='shadow-md shadow-gray-600 rounded-lg flex flex-col justify-between h-full pb-4'
+    >
+      <img src={src} alt={`${title} screenshot`} className='rounded-t-md duration-200 hover:scale-105' />
+      <div className='flex flex-col items-center justify-between flex-1'>
+        <p className="text-lg font-semibold mt-4">{title}</p>
+        <a 
+          href={link} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="w-1/2 px-6 py-3 mt-4 text-center font-semibold bg-black text-white rounded-md duration-200 hover:scale-105 hover:bg-gray-800 focus:ring-2 focus:ring-offset-2 focus:ring-gray-600"
+        >
+          View Project
+        </a>
+      </div>
+    </div>
+  ))}
+</div>
+
       </div>
     </div>
   );
