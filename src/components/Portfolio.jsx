@@ -5,6 +5,7 @@ import reactPortfolio from '../assets/portfolio.jpeg';
 import CodeCrafter from '../assets/CodeCrafter.jpeg';
 import aitripplanner from '../assets/aitripplanner.jpeg';
 import notepad from '../assets/notepad.jpeg';
+import HireHub from '../assets/HireHub.jpeg';
 
 const Portfolio = () => {
   const portfolio = [
@@ -16,30 +17,36 @@ const Portfolio = () => {
     },
     {
       id: 2,
+      src: HireHub,
+      link: 'https://hirehub-gold.vercel.app/',  
+      title: 'HireHub'
+    },
+    {
+      id: 3,
       src: reactElectronic,
       link: 'https://github.com/siddharthh12/Electronic_Store_MERN',  
       title: 'Electronic Store'
     },
     {
-      id: 3,
+      id: 4,
       src: CodeCrafter,
       link: 'https://github.com/siddharthh12/CodeCrafter/tree/master',
       title: 'CodeCrafter'
     },
     {
-      id: 4,
+      id: 5,
       src: reactPortfolio,
       link: 'https://github.com/siddharthh12/Personal_Portfolio',  
       title: 'Personal Portfolio'
     },
     {
-      id: 5,
+      id: 6,
       src: reactTicTacToe,
       link: 'https://github.com/siddharthh12/Tic_Tac_Toe',
       title: 'Tic Tac Toe'
     },
     {
-      id: 6,
+      id: 7,
       src: notepad,
       link: 'https://github.com/siddharthh12/notepad',
       title: 'Notepad App'
