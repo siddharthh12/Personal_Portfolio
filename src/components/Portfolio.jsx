@@ -1,7 +1,7 @@
 import React from 'react';
 import reactElectronic from '../assets/es_ss.jpeg';
 import reactTicTacToe from '../assets/tictactoe.jpeg';
-import reactPortfolio from '../assets/portfolio.jpeg';
+import reactPortfolio from '../assets/portfolio1.jpeg.png';
 import CodeCrafter from '../assets/CodeCrafter.jpeg';
 import aitripplanner from '../assets/aitripplanner.jpeg';
 import notepad from '../assets/notepad.jpeg';
@@ -22,16 +22,16 @@ const Portfolio = () => {
       title: 'HireHub'
     },
     {
-      id: 3,
-      src: reactElectronic,
-      link: 'https://github.com/siddharthh12/Electronic_Store_MERN',  
-      title: 'Electronic Store'
-    },
-    {
       id: 4,
       src: CodeCrafter,
       link: 'https://github.com/siddharthh12/CodeCrafter/tree/master',
       title: 'CodeCrafter'
+    },
+    {
+      id: 3,
+      src: reactElectronic,
+      link: 'https://github.com/siddharthh12/Electronic_Store_MERN',  
+      title: 'Electronic Store'
     },
     {
       id: 5,

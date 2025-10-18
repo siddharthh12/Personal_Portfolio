@@ -41,7 +41,7 @@ const SocialLinks = () => {
                 Resume <BsFillPersonLinesFill size={30} />
                 </>
             ),
-            href:'/siddharth_resum.pdf',
+            href:'/Siddharth_Tiwari_Resumes.pdf',
             style:'rounded-br-md',
             download:true
         }
