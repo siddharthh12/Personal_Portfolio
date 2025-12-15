@@ -3,7 +3,6 @@ import css from '../assets/css.png'
 import html from '../assets/html.png'
 import javascript from '../assets/javascript.png'
 import react from '../assets/react.png'
-import tailwind from '../assets/tailwind.png'
 import nodejs from '../assets/node.png'
 import nextjs from '../assets/nextjs1.png'
 
@@ -42,12 +41,6 @@ const Skills = () => {
             title:'Node',
             style:'shadow-green-500'
         },
-        // {
-        //     id:6,
-        //     src:tailwind,
-        //     title:'Tailwind',
-        //     style:'shadow-sky-500'
-        // },
          {
             id:6,
             src:nextjs,
