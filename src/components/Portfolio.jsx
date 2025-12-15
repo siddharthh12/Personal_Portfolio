@@ -54,35 +54,88 @@ const Portfolio = () => {
   ];
 
   return (
-    <div name='portfolio' className='bg-gradient-to-b from-black to-gray-800 w-full text-white py-40'>
+    <div name='portfolio' className='bg-gradient-to-b from-black to-gray-800 w-full text-white py-20 md:py-40'>
       <div className='max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full'>
-        <div className='pb-8'>
-          <p className='text-4xl font-bold inline border-b-4 border-gray-500'>Portfolio</p>
-          <p className='py-6'>Check out some of my work right here</p>
+        
+        {/* Header Section with Animation */}
+        <div className='pb-8 opacity-0 animate-fadeIn'>
+          <p className='text-4xl sm:text-5xl font-bold inline border-b-4 border-cyan-500'>
+            Portfolio
+          </p>
+          <p className='py-6 text-gray-400'>Check out some of my work right here</p>
         </div>
 
-        <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0'>
-  {portfolio.map(({ id, src, link, title }) => (
-    <div 
-      key={id} 
-      className='shadow-md shadow-gray-600 rounded-lg flex flex-col justify-between h-full pb-4'
-    >
-      <img src={src} alt={`${title} screenshot`} className='rounded-t-md duration-200 hover:scale-105' />
-      <div className='flex flex-col items-center justify-between flex-1'>
-        <p className="text-lg font-semibold mt-4">{title}</p>
-        <a 
-          href={link} 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="w-1/2 px-6 py-3 mt-4 text-center font-semibold bg-black text-white rounded-md duration-200 hover:scale-105 hover:bg-gray-800 focus:ring-2 focus:ring-offset-2 focus:ring-gray-600"
-        >
-          View Project
-        </a>
-      </div>
-    </div>
-  ))}
-</div>
+        {/* Portfolio Grid */}
+        <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-4 sm:px-0'>
+          {portfolio.map(({ id, src, link, title }, index) => (
+            <div 
+              key={id} 
+              className='group relative shadow-lg shadow-cyan-500/20 rounded-lg overflow-hidden flex flex-col justify-between h-full bg-gradient-to-b from-gray-900 to-gray-800 border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 opacity-0 animate-fadeIn hover:shadow-cyan-500/40 hover:shadow-xl'
+              style={{ animationDelay: `${index * 150}ms` }}
+            >
+              {/* Image Container with Overlay Effect */}
+              <div className='relative overflow-hidden'>
+                <img 
+                  src={src} 
+                  alt={`${title} screenshot`} 
+                  className='w-full h-48 object-cover rounded-t-md duration-500 group-hover:scale-110 group-hover:brightness-75'
+                />
+                {/* Gradient Overlay on Hover */}
+                <div className='absolute inset-0 bg-gradient-to-t from-cyan-500/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500'></div>
+                
+                {/* Project Number Badge */}
+                <div className='absolute top-3 right-3 bg-cyan-500/90 text-white px-3 py-1 rounded-full text-xs font-bold backdrop-blur-sm'>
+                  #{id}
+                </div>
+              </div>
 
+              {/* Content Section */}
+              <div className='flex flex-col items-center justify-between flex-1 p-4'>
+                {/* Title with Gradient */}
+                <h3 className="text-lg sm:text-xl font-bold mt-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 group-hover:from-cyan-300 group-hover:to-blue-400 transition-all duration-300">
+                  {title}
+                </h3>
+                
+                {/* View Project Button with Enhanced Hover */}
+                <a 
+                  href={link} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="relative w-full sm:w-auto px-6 py-3 mt-4 text-center font-semibold bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-full overflow-hidden transition-all duration-300 hover:from-cyan-400 hover:to-blue-400 hover:scale-105 shadow-lg shadow-cyan-500/30 hover:shadow-cyan-500/50 group/button"
+                >
+                  {/* Button Text */}
+                  <span className='relative z-10 flex items-center justify-center gap-2'>
+                    View Project
+                    <svg 
+                      className="w-4 h-4 transform group-hover/button:translate-x-1 transition-transform duration-300" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
+                  
+                  {/* Animated Background Shine Effect */}
+                  <div className='absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/button:translate-x-full transition-transform duration-700'></div>
+                </a>
+
+                {/* Tech Stack Indicator (Optional - can add tech tags here) */}
+                <div className='flex gap-2 mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500'>
+                  <span className='w-2 h-2 bg-cyan-400 rounded-full animate-pulse'></span>
+                  <span className='w-2 h-2 bg-blue-400 rounded-full animate-pulse' style={{ animationDelay: '0.2s' }}></span>
+                  <span className='w-2 h-2 bg-purple-400 rounded-full animate-pulse' style={{ animationDelay: '0.4s' }}></span>
+                </div>
+              </div>
+
+              {/* Decorative Corner Glow */}
+              <div className='absolute -top-10 -right-10 w-20 h-20 bg-cyan-500/20 rounded-full blur-2xl group-hover:bg-cyan-500/30 transition-all duration-500'></div>
+              <div className='absolute -bottom-10 -left-10 w-20 h-20 bg-blue-500/20 rounded-full blur-2xl group-hover:bg-blue-500/30 transition-all duration-500'></div>
+            </div>
+          ))}
+        </div>
+
+       
       </div>
     </div>
   );
